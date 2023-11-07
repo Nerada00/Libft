@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 17:35:45 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/07 20:41:23 by abdmessa         ###   ########.fr       */
+/*   Created: 2023/11/07 21:06:32 by abdmessa          #+#    #+#             */
+/*   Updated: 2023/11/07 21:40:34 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	unsigned char	*dest;
+	unsigned char	*s1;
+	int				i;
 
 	i = 0;
-	j = 0;
-	while (i < dstsize && dest[i])
+	s1 = (unsigned char *)s;
+	dest = malloc(sizeof(unsigned char *) * len);
+	if (!dest)
+		return (NULL);
+	while (i < len)
 	{
+		dest[i] = s1[start];
 		i++;
+		start++;
 	}
-	while ((i + j + 1) < dstsize && src[j])
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	if (i != dstsize)
-	{
-		dest[i + j] = '\0';
-	}
-	return (dest);
+	dest[i] = '\0';
+	return ((char *)dest);
 }

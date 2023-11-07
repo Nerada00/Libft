@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 17:35:45 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/07 20:41:23 by abdmessa         ###   ########.fr       */
+/*   Created: 2023/11/07 20:07:43 by abdmessa          #+#    #+#             */
+/*   Updated: 2023/11/07 20:41:38 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+
+char	*strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
+	if (!little)
+		return (big);
+	if (len == 0)
+		return (NULL);
 	i = 0;
-	j = 0;
-	while (i < dstsize && dest[i])
+	while (big[i] && i < len)
 	{
+		j = 0;
+		while ((big[i + j]) && (big[i + j] == little[j]) && (i + j < len))
+			j++;
+		if (!little[j])
+			return (big + i);
 		i++;
 	}
-	while ((i + j + 1) < dstsize && src[j])
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	if (i != dstsize)
-	{
-		dest[i + j] = '\0';
-	}
-	return (dest);
+	return (NULL);
 }

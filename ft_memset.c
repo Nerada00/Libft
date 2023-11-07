@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/07 17:35:39 by abdmessa          #+#    #+#             */
+/*   Updated: 2023/11/07 20:41:15 by abdmessa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
@@ -18,6 +30,7 @@ void	*ft_memset(void *s, int c, size_t n)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 int	main(int ac, char **av)
 {
 	(void)ac;
