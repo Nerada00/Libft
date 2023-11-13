@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abdmessa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/10 14:23:51 by abdmessa          #+#    #+#             */
+/*   Updated: 2023/11/10 14:27:58 by abdmessa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	check(char c, const char *set)
@@ -13,7 +25,6 @@ int	check(char c, const char *set)
 	}
 	return (0);
 }
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

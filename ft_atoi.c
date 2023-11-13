@@ -6,13 +6,13 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:33:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/07 20:47:00 by abdmessa         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:06:31 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	res;
 	int	neg;

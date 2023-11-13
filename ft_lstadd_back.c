@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdmessa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 14:25:57 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/10 14:25:59 by abdmessa         ###   ########.fr       */
+/*   Created: 2023/11/13 18:46:52 by abdmessa          #+#    #+#             */
+/*   Updated: 2023/11/13 19:05:26 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*cpy;
+	t_list	*current;
 
-	if (!s)
-		return (ft_strdup(""));
-	cpy = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!cpy)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s[i])
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		cpy[j] = (*f)(i, s[i]);
-		i++;
-		j++;
+		current = *lst;
+		while ((*current).next)
+			current = (*current).next;
+		(*current).next = new;
 	}
-	cpy[j] = '\0';
-	return (cpy);
 }

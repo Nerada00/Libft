@@ -6,18 +6,15 @@
 /*   By: abdmessa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:34:16 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/07 17:34:18 by abdmessa         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:50:18 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int i)
+int	ft_isprint(int nb)
 {
-	if (i >= 32 && i <= 127)
-	{
-		return (1);
-	}
-	else
+	if (nb < 32 || nb > 126)
 		return (0);
+	return (1);
 }

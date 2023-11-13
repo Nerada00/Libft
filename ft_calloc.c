@@ -6,16 +6,20 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:18:15 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/07 20:47:43 by abdmessa         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:27:49 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*s;
 
+	if (!size)
+		return ((void *)malloc(0));
+	if (nmemb && (nmemb * size) / nmemb != size)
+		return (NULL);
 	s = malloc(nmemb * size);
 	if (!s)
 		return (NULL);
