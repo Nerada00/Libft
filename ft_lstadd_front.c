@@ -6,7 +6,7 @@
 /*   By: abdmessa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:28:31 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/13 14:39:43 by abdmessa         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:44:40 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (*lst)
-	{
-		(*new).next = *lst;
-		*lst = new;
-	}
+	(*new).next = *lst;
+	*lst = new;
 }

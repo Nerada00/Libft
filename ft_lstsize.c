@@ -6,7 +6,7 @@
 /*   By: abdmessa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:45:38 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/13 14:56:58 by abdmessa         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:42:52 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	size;
+	t_list	*current;
+	int		size;
 
 	size = 0;
-	while (lst)
+	current = lst;
+	while (current)
 	{
-		lst = (*lst).next;
 		size++;
+		current = (*current).next;
 	}
 	return (size);
 }
