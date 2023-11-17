@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:18:15 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/13 14:27:49 by abdmessa         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:07:44 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*s;
 
-	if (!size)
-		return ((void *)malloc(0));
-	if (nmemb && (nmemb * size) / nmemb != size)
+	if (!size || !nmemb)
+		return (ft_calloc(1, 1));
+	if (nmemb > SIZE_MAX / size)
 		return (NULL);
 	s = malloc(nmemb * size);
 	if (!s)

@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:44:41 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/15 18:18:52 by abdmessa         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:39:41 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
 
-	if (!s)
-		return (NULL);
 	str = (unsigned char *)s;
-	while (str && n > 0)
+	while (n > 0)
 	{
 		if ((*str) == (unsigned char)c)
 			return ((void *)str);
